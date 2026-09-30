@@ -8,8 +8,8 @@
 
 | 文件 | 大小 | SHA-256 |
 |---|---|---|
-| [echoinsight-0.1.0-windows-x64-setup.exe](https://github.com/Nickszy/huixiang/releases/download/v0.1.0/echoinsight-0.1.0-windows-x64-setup.exe)（安装版） | 9,355,086 字节 | `148e7a0bdf5e91e23e97a7fdb063dddd3edb3c276817a27236bf052f809e9528` |
-| [echoinsight-0.1.0-windows-x64-portable.zip](https://github.com/Nickszy/huixiang/releases/download/v0.1.0/echoinsight-0.1.0-windows-x64-portable.zip)（免安装便携版） | 14,285,941 字节 | `5ee1a895d2de09972039d334ce28a7ade2076b0e912193919b00a98566e429c6` |
+| [echoinsight-0.1.0-windows-x64-setup.exe](https://github.com/Nickszy/huixiang/releases/download/v0.1.0/echoinsight-0.1.0-windows-x64-setup.exe)（安装版） | 9,372,053 字节 | `7ed6707bb12056e02807b33701c051f1cf3247fc83fa69529d993633f94b7aed` |
+| [echoinsight-0.1.0-windows-x64-portable.zip](https://github.com/Nickszy/huixiang/releases/download/v0.1.0/echoinsight-0.1.0-windows-x64-portable.zip)（免安装便携版） | 14,317,166 字节 | `c2206536e010798490e69d59bd6317106be1ff5358186bfc4ce8b1fcf7dcfded` |
 
 系统要求：Windows 10 1809+ 或 Windows 11（x64，需 WebView2 运行时）。安装包未签名，SmartScreen 可能提示；请核对上方哈希。便携版解压后运行 `echo-insight-desktop.exe`。
 
