@@ -73,13 +73,15 @@ test('all pages have working same-directory links, landmarks and no external run
 
 test('homepage distinguishes archive development from the published installer', async () => {
   const html = await readFile(join(root, 'index.html'), 'utf8');
-  assert.match(html, /聊天里的生活/);
-  assert.match(html, /值得好好收藏/);
+  assert.match(html, /散户投资者/);
+  assert.match(html, /群聊里的线索/);
+  assert.match(html, /成为研究起点/);
   assert.match(html, /尚未打包公开/);
   assert.match(html, /0\.1\.0 为早期演示版/);
   assert.match(html, /合成界面示意/);
   assert.match(html, /搜索当前已载入的消息/);
-  for (const phrase of ['跨群追一个话题', '跟进重要的人', '定时收到重点', '规划中']) assert.ok(html.includes(phrase));
+  for (const phrase of ['关注优质投资群', '回查标的讨论', '找到研报与资料', '附件自动总结', '规划中']) assert.ok(html.includes(phrase));
+  assert.match(html, /自动标的提取、附件自动总结与真实聊天 AI 总结尚未接入/);
   const download = await readFile(join(root, 'download.html'), 'utf8');
   assert.match(download, /下载后不会获得视频中的聊天与媒体体验/);
   assert.match(download, /仅保存模型配置，不发起调用/);
