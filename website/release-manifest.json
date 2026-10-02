@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 2,
+  "status": "released",
+  "builds": {
+    "windows": {
+      "status": "released",
+      "platform": "windows",
+      "architecture": "x64",
+      "publishGate": {
+        "sourceReviewed": true,
+        "releaseNotesReviewed": true,
+        "approved": true
+      },
+      "version": "0.1.0",
+      "date": "2026-09-30",
+      "file": "artifacts/echoinsight-0.1.0-windows-x64-setup.exe",
+      "sha256": "7ed6707bb12056e02807b33701c051f1cf3247fc83fa69529d993633f94b7aed",
+      "sizeBytes": 9372053,
+      "supportedConnectorVersions": [
+        "0.0.0"
+      ]
+    },
+    "macos-arm64": null,
+    "macos-x64": null
+  }
+}
