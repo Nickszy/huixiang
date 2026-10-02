@@ -65,21 +65,22 @@ def illustration(media=False):
     text(d, (24, 891), "合成演示内容", 16, "#93b5a1")
     if media:
         text(d, (228, 93), "媒体库", 36, INK, True)
-        text(d, (228, 149), "照片与资料，都有自己的位置。", 21, MUTED)
+        text(d, (228, 149), "研报、图表、纪要，为研究留存依据。", 21, MUTED)
         box(d, (228, 214, 1165, 268), "white", 9, LINE)
         text(d, (248, 229), "搜索文件名…", 20, MUTED)
         for x, label in [(228, "图片"), (370, "视频"), (512, "文件")]:
-            box(d, (x, 296, x + 120, 339), INK if x == 228 else "#e7ede4", 7)
-            text(d, (x + 33, 306), label, 19, "white" if x == 228 else INK)
-        text(d, (228, 375), "全部图片  ·  原图文件存在  ·  仅缩略图", 20, MUTED)
+            box(d, (x, 296, x + 120, 339), INK if x == 512 else "#e7ede4", 7)
+            text(d, (x + 33, 306), label, 19, "white" if x == 512 else INK)
+        text(d, (228, 375), "全部文件  ·  PDF  ·  Excel  ·  纪要  ·  音频", 20, MUTED)
         for n in range(6):
             x, y = 228 + (n % 3) * 317, 427 + (n // 3) * 218
             box(d, (x, y, x + 295, y + 198), "white", 10, LINE)
             box(d, (x + 10, y + 10, x + 285, y + 139), ["#d2e1d5", "#c3d6c8", "#dfe7d9"][n % 3], 8)
-            d.polygon([(x + 18, y + 136), (x + 100, y + 55), (x + 161, y + 115), (x + 223, y + 73), (x + 277, y + 136)], fill="#8fac94")
-            d.ellipse((x + 230, y + 25, x + 253, y + 48), fill="#f6f2ce")
-            text(d, (x + 15, y + 149), f"周末记录_{n + 1:02}.jpg", 18, INK)
-            text(d, (x + 15, y + 175), "演示内容 · 原图候选", 14, MUTED)
+            types = ["PDF", "XLS", "DOC", "PDF", "PPT", "MP3"]
+            names = ["示例科技_研究资料.pdf", "示例科技_估值表.xlsx", "行业交流_纪要.docx", "行业观察_资料.pdf", "研究假设_示例.pptx", "行业交流_示例.mp3"]
+            text(d, (x + 90, y + 45), types[n], 42, "#2a6447", True)
+            text(d, (x + 15, y + 149), names[n], 18, INK)
+            text(d, (x + 15, y + 175), "合成文件示意 · 本机资料", 14, MUTED)
         text(d, (228, 900), "共 128 项 · 每页 6 项", 18, MUTED)
         text(d, (963, 900), "‹   1 / 22   ›", 18, INK)
     else:
@@ -89,7 +90,7 @@ def illustration(media=False):
         box(d, (218, 153, 497, 200), "white", 9, LINE)
         text(d, (236, 165), "搜索会话…", 17, MUTED)
         text(d, (220, 226), "全部  ·  个人  ·  群聊  ·  公众号", 16, MUTED)
-        contacts = [("周", "周末散步小队", "照片已经放进文件夹啦", "14:26"), ("林", "小林", "那就周六见", "12:08"), ("读", "读书分享", "一起翻翻最近的书", "昨天"), ("城", "城市周报", "本周的城市散步路线", "昨天")]
+        contacts = [("研", "标的研究演示群", "示例科技：核对公告依据", "14:26"), ("报", "研报共读演示群", "资料放在本机附件里", "12:08"), ("林", "林研（虚构）", "回查原话与不同假设", "昨天"), ("行", "行业观察（演示）", "讨论仅为待核实线索", "昨天")]
         for i, (initial, name, message, time) in enumerate(contacts):
             y = 290 + i * 115
             if i == 0:
@@ -99,36 +100,36 @@ def illustration(media=False):
             text(d, (278, y + 34), message, 14, MUTED)
             text(d, (278, y + 59), time + ("  ·  已关注" if i == 0 else ""), 13, MUTED)
         text(d, (233, 900), "‹   1 / 8   ›", 18, MUTED)
-        avatar(d, (550, 88), "周")
-        text(d, (610, 86), "周末散步小队", 27, INK, True)
-        text(d, (610, 131), "群聊 · 演示会话", 16, MUTED)
+        avatar(d, (550, 88), "研")
+        text(d, (610, 86), "标的研究演示群", 27, INK, True)
+        text(d, (610, 131), "群聊 · 虚构标的 DEMO-01", 16, MUTED)
         d.line((523, 174, 1200, 174), fill=LINE)
         text(d, (553, 193), "对话    图片    视频    文件", 20, INK)
         box(d, (550, 248, 1170, 294), "white", 8, LINE)
-        text(d, (570, 260), "搜索已载入消息…", 18, MUTED)
+        text(d, (570, 260), "搜索已载入消息：示例科技", 18, MUTED)
         text(d, (790, 331), "周六 14:26", 15, MUTED)
         avatar(d, (550, 385), "林")
-        text(d, (612, 381), "小林", 17, MUTED)
+        text(d, (612, 381), "林研（虚构）", 17, MUTED)
         box(d, (610, 416, 1090, 481), "white", 10, LINE)
-        text(d, (635, 435), "照片已经放进文件夹啦。", 24, INK)
+        text(d, (635, 435), "示例科技：订单变化仍需核实。", 24, INK)
         avatar(d, (550, 526), "陈", "#dedec7")
-        text(d, (612, 522), "小陈", 17, MUTED)
+        text(d, (612, 522), "陈研（虚构）", 17, MUTED)
         box(d, (610, 557, 1116, 672), "white", 10, LINE)
-        text(d, (633, 579), "PDF  ·  周末散步路线.pdf", 22, INK, True)
+        text(d, (633, 579), "PDF  ·  示例科技_研究资料.pdf", 22, INK, True)
         text(d, (633, 629), "本地附件   ·   用系统应用打开 ↗", 17, MUTED)
         box(d, (747, 729, 1167, 795), "#d6edcf", 10)
-        text(d, (773, 748), "收到，周六一起出发。", 24, INK)
+        text(d, (773, 748), "先回查公告，再核对假设。", 24, INK)
         text(d, (758, 883), "只读档案 · 合成界面示意", 16, MUTED)
     return im
 
 
 SCENES = [
-    ("KEEP THE CONVERSATION", ["聊天里的生活，", "值得好好收藏。"], "回响 / 你的本地聊天档案", "照片、文件、聊过的事。慢慢翻，也更好找。", False),
-    ("01 / CONVERSATIONS", ["关心的会话，", "先看到。"], "个人 · 群聊 · 公众号", "最近消息优先 · 会话搜索 · 关注筛选", False),
-    ("02 / INSIDE THE CHAT", ["不止看对话，", "也能找资料。"], "对话 · 图片 · 视频 · 文件", "在会话里切换媒体，找回上下文。", False),
-    ("03 / MEDIA LIBRARY", ["照片与文件，", "各有各的位置。"], "搜索 · 分类 · 翻页 · 排序", "可解码原图优先；只有缩略图，也说明。", True),
-    ("04 / LOCAL ARCHIVE", ["自己的档案，", "在自己的电脑。"], "选择保存目录 · 默认 5 分钟检查", "应用打开时检查变化，变化的整库才更新。", True),
-    ("ECHO INSIGHT / PREVIEW", ["把聊过的事，", "慢慢找回来。"], "huixiang.nickszy.com", "新档案功能尚未打包公开。", False),
+    ("FOR INDIVIDUAL INVESTORS", ["群聊里的线索，", "成为研究起点。"], "回响 / 散户投资者的本机研究工作台", "投资研究场景", False),
+    ("01 / FOLLOW YOUR GROUPS", ["关注优质群，", "留下讨论依据。"], "自己选择认可的群 · 最近消息优先", "会话关注", False),
+    ("02 / RESEARCH THE IDEA", ["讨论过的标的，", "回到原话核查。"], "示例科技 DEMO-01 · 虚构标的", "回查标的讨论", False),
+    ("03 / FIND THE MATERIAL", ["研报和估值表，", "找到再核对。"], "PDF · Excel · 纪要 · 音频", "本机资料浏览", True),
+    ("04 / WHAT COMES NEXT", ["附件自动总结，", "是下一步方向。"], "规划中 · 尚未接入 · 当前不读正文", "自动总结规划", True),
+    ("ECHO INSIGHT / PREVIEW", ["把投资群线索，", "留作研究材料。"], "huixiang.nickszy.com", "开发体验示意", False),
 ]
 
 
@@ -184,18 +185,18 @@ def main():
     cover = Image.new("RGB", (1080, 1440), INK)
     d = ImageDraw.Draw(cover)
     text(d, (68, 86), "回响 / ECHO INSIGHT", 32, GREEN, True)
-    text(d, (60, 207), "我给微信聊天", 88, "white", True)
-    text(d, (60, 334), "做了个档案馆", 88, GREEN, True)
-    text(d, (68, 476), "聊天 · 照片 · 文件 · 在本机慢慢找", 32, "#c9dfd0")
+    text(d, (60, 207), "投资群里的线索", 88, "white", True)
+    text(d, (60, 334), "终于有处可查", 88, GREEN, True)
+    text(d, (68, 476), "关注优质群 · 回查标的 · 归档研报", 32, "#c9dfd0")
     cover.paste(workspace.resize((944, 755), Image.Resampling.LANCZOS), (68, 584))
     text(d, (68, 1370), "研发体验 · 合成示意 · 新功能尚未打包公开", 22, "#abc4b3")
     cover.save(MEDIA / "cover-xiaohongshu.png")
     social = Image.new("RGB", (1200, 630), INK)
     sd = ImageDraw.Draw(social)
     text(sd, (65, 75), "回响 / ECHO INSIGHT", 28, GREEN, True)
-    text(sd, (60, 175), "聊天里的生活，", 62, "white", True)
-    text(sd, (60, 270), "值得好好收藏。", 62, GREEN, True)
-    text(sd, (65, 445), "你的本地聊天档案", 30, "#c9dfd0")
+    text(sd, (60, 175), "群聊里的线索，", 62, "white", True)
+    text(sd, (60, 270), "成为研究起点。", 62, GREEN, True)
+    text(sd, (65, 445), "散户投资者的研究工作台", 30, "#c9dfd0")
     text(sd, (65, 532), "研发体验 · 合成示意 · 新档案版尚未公开", 20, "#abc4b3")
     social.paste(workspace.resize((480, 384), Image.Resampling.LANCZOS), (675, 133))
     social.save(ASSETS / "social-cover.png")
