@@ -8,6 +8,12 @@
 
 Node.js 20+；浏览器预览可使用 Python：
 
+安装包不进入 Git。首次克隆发布仓库时，先用 GitHub CLI 获取已有公开制品；测试与站点打包都会校验其实际大小和哈希：
+
+```powershell
+gh release download v0.1.0 --repo Nickszy/huixiang --pattern echoinsight-0.1.0-windows-x64-setup.exe --dir website/artifacts
+```
+
 ```powershell
 python -m http.server 8765 --directory website
 node --test website/site.test.mjs
@@ -30,10 +36,12 @@ python promotions/render_assets.py
 
 需要 Cloudflare Pages 的现有登录状态，不把凭据写进仓库。先运行测试，再生成一个不存在的输出目录：
 
+首次使用 Wrangler 可先运行 `npm ci --prefix website`。下面的部署命令从仓库根目录执行，因此用 `--prefix website` 找到已锁定的工具：
+
 ```powershell
 node --test website/site.test.mjs
 node website/build-site.mjs website/dist-publish-new
-npx wrangler pages deploy website/dist-publish-new --project-name=echo-insight --branch=main
+npm exec --prefix website -- wrangler pages deploy website/dist-publish-new --project-name=echo-insight --branch=main
 ```
 
 `build-site.mjs` 只复制固定的页面、公开素材及通过实际字节数 / SHA-256 检查的安装包。不复制聊天档案、开发日志、模型配置或本机密钥；使用新目录避免旧发布残留。生产发布后检查首页视频、下载页面以及域名。
