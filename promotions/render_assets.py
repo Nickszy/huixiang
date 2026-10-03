@@ -90,15 +90,15 @@ def illustration(media=False):
         box(d, (218, 153, 497, 200), "white", 9, LINE)
         text(d, (236, 165), "搜索会话…", 17, MUTED)
         text(d, (220, 226), "全部  ·  个人  ·  群聊  ·  公众号", 16, MUTED)
-        contacts = [("研", "标的研究演示群", "示例科技：核对公告依据", "14:26"), ("报", "研报共读演示群", "资料放在本机附件里", "12:08"), ("林", "林研（虚构）", "回查原话与不同假设", "昨天"), ("行", "行业观察（演示）", "讨论仅为待核实线索", "昨天")]
+        contacts = [("研", "标的研究演示群", "示例科技：核对公告依据", "14:26"), ("行", "行业观察公众号（演示）", "文章分享：核对研究假设", "13:10"), ("报", "研报共读演示群", "资料放在本机附件里", "12:08"), ("林", "林研（虚构）", "回查原话与不同假设", "昨天")]
         for i, (initial, name, message, time) in enumerate(contacts):
             y = 290 + i * 115
             if i == 0:
                 box(d, (205, y - 13, 511, y + 86), "#ddebdc", 8)
             avatar(d, (220, y), initial)
-            text(d, (278, y + 2), name, 19, INK, True)
+            text(d, (278, y + 2), name, 16 if i == 1 else 19, INK, True)
             text(d, (278, y + 34), message, 14, MUTED)
-            text(d, (278, y + 59), time + ("  ·  已关注" if i == 0 else ""), 13, MUTED)
+            text(d, (278, y + 59), time + ("  ·  已关注" if i in (0, 1) else ""), 13, MUTED)
         text(d, (233, 900), "‹   1 / 8   ›", 18, MUTED)
         avatar(d, (550, 88), "研")
         text(d, (610, 86), "标的研究演示群", 27, INK, True)
@@ -125,10 +125,10 @@ def illustration(media=False):
 
 SCENES = [
     ("FOR INDIVIDUAL INVESTORS", ["群聊里的线索，", "成为研究起点。"], "回响 / 散户投资者的本机研究工作台", "投资研究场景", False),
-    ("01 / FOLLOW YOUR GROUPS", ["关注优质群，", "留下讨论依据。"], "自己选择认可的群 · 最近消息优先", "会话关注", False),
+    ("01 / FOLLOW YOUR SOURCES", ["投资群、公众号，", "关注认可的来源。"], "只看关注 · 回查本机已有分享", "会话关注", False),
     ("02 / RESEARCH THE IDEA", ["讨论过的标的，", "回到原话核查。"], "示例科技 DEMO-01 · 虚构标的", "回查标的讨论", False),
     ("03 / FIND THE MATERIAL", ["研报和估值表，", "找到再核对。"], "PDF · Excel · 纪要 · 音频", "本机资料浏览", True),
-    ("04 / WHAT COMES NEXT", ["附件自动总结，", "是下一步方向。"], "规划中 · 尚未接入 · 当前不读正文", "自动总结规划", True),
+    ("04 / WHAT COMES NEXT", ["公众号定期追踪，", "是下一步方向。"], "按天 / 按周 · 规划中 · 未自动摘要推送", "定期追踪规划", True),
     ("ECHO INSIGHT / PREVIEW", ["把投资群线索，", "留作研究材料。"], "huixiang.nickszy.com", "开发体验示意", False),
 ]
 
@@ -187,7 +187,7 @@ def main():
     text(d, (68, 86), "回响 / ECHO INSIGHT", 32, GREEN, True)
     text(d, (60, 207), "投资群里的线索", 88, "white", True)
     text(d, (60, 334), "终于有处可查", 88, GREEN, True)
-    text(d, (68, 476), "关注优质群 · 回查标的 · 归档研报", 32, "#c9dfd0")
+    text(d, (68, 476), "投资群与公众号 · 回查标的 · 归档研报", 30, "#c9dfd0")
     cover.paste(workspace.resize((944, 755), Image.Resampling.LANCZOS), (68, 584))
     text(d, (68, 1370), "研发体验 · 合成示意 · 新功能尚未打包公开", 22, "#abc4b3")
     cover.save(MEDIA / "cover-xiaohongshu.png")
