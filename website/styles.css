@@ -22,7 +22,7 @@ figcaption{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.7;tex
 .feature-band .fine-print{max-width:480px}.product-split .inline-link{margin-top:20px}
 .video-section{display:grid;grid-template-columns:1fr 330px;align-items:center;gap:150px}
 .video-section video{width:100%;max-height:590px;aspect-ratio:9/16;border-radius:16px;background:var(--ink);box-shadow:0 20px 45px #102a2320}
-.video-section .inline-link{margin-top:24px}.roadmap-row{display:flex;gap:45px;border-top:1px solid #bfd3c3;margin-top:40px;padding-top:22px;font-size:17px;font-weight:650}
+.video-section .inline-link{margin-top:24px}.roadmap-row{display:flex;flex-wrap:wrap;gap:45px;border-top:1px solid #bfd3c3;margin-top:40px;padding-top:22px;font-size:17px;font-weight:650}
 .closing-github{display:block;margin-top:18px;color:#b2dfc5;font-size:12px;text-decoration:none}
 .release-warning{margin-top:35px}.platform-card .button.ghost{color:var(--ink);border-color:#9ab4a3}
 @media(max-width:1000px){.video-section{gap:65px}.product-split{gap:30px}}
